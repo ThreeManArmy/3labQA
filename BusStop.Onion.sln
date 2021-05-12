@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Onion", "BusStop.Onion\BusStop.Onion.csproj", "{34D616D1-64E6-4A95-AC5E-DFD08339F339}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Data", "BusStop.Data\BusStop.Data.csproj", "{C5AD9F45-11EA-4862-A224-4749EBF10E1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Core", "BusStop.Core\BusStop.Core.csproj", "{6120F6D7-CFA4-4507-BCBE-5DABE7FB40FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Orchestrators", "BusStop.Orchestrators\BusStop.Orchestrators.csproj", "{9644388B-37C7-4F39-ABA3-20696E8D693C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34D616D1-64E6-4A95-AC5E-DFD08339F339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D616D1-64E6-4A95-AC5E-DFD08339F339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D616D1-64E6-4A95-AC5E-DFD08339F339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D616D1-64E6-4A95-AC5E-DFD08339F339}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5AD9F45-11EA-4862-A224-4749EBF10E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5AD9F45-11EA-4862-A224-4749EBF10E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5AD9F45-11EA-4862-A224-4749EBF10E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5AD9F45-11EA-4862-A224-4749EBF10E1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6120F6D7-CFA4-4507-BCBE-5DABE7FB40FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6120F6D7-CFA4-4507-BCBE-5DABE7FB40FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6120F6D7-CFA4-4507-BCBE-5DABE7FB40FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6120F6D7-CFA4-4507-BCBE-5DABE7FB40FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9644388B-37C7-4F39-ABA3-20696E8D693C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9644388B-37C7-4F39-ABA3-20696E8D693C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9644388B-37C7-4F39-ABA3-20696E8D693C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9644388B-37C7-4F39-ABA3-20696E8D693C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
