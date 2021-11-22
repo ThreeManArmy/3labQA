@@ -13,6 +13,7 @@ namespace BusStop.Data.BusStop
         public BusRepository(IMapper mapper,
             BusStopContext busContext)
         {
+            _mapper = mapper;
             _context = busContext;
         }
         public async Task<List<Core.BusStop.BusStop>> GetAsync()
@@ -29,10 +30,10 @@ namespace BusStop.Data.BusStop
 
         public async Task<Core.BusStop.BusStop> UpdateAsync(int Id, int count)
         {
-            var busEntetie = _mapper.Map<BusDto>(count);
-
-            var result =  _context.Update(busEntetie);
-
+            var entetie = await _context.BusStations.FirstOrDefaultAsync(x => x.Id == Id);
+            entetie.CountOfBuses = count;
+            var result =  _context.Update(entetie);
+            await _context.SaveChangesAsync();
             return _mapper.Map<Core.BusStop.BusStop>(result.Entity);
         }
 
@@ -40,12 +41,14 @@ namespace BusStop.Data.BusStop
         {
             var entetie = await _context.BusStations.FirstOrDefaultAsync(x => x.Id == Id);
             _context.BusStations.Remove(entetie);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<Core.BusStop.BusStop> AddAsync(Core.BusStop.BusStop busStop)
         {
             var entity = _mapper.Map<BusDto>(busStop);
             var result = await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
             return _mapper.Map<Core.BusStop.BusStop>(result.Entity);
         }
     }

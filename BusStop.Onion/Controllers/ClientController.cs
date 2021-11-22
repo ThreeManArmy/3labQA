@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using BusStop.Core.Client;
-using BusStop.Onion.BusContract;
+using BusStop.Orchestrators.BusStop;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BusStop.Onion.Controllers
@@ -12,44 +12,35 @@ namespace BusStop.Onion.Controllers
     public class ClientController : ControllerBase
     {
         private readonly IClientService _clientService;
-        private readonly Mapper _mapper;
+        private readonly IMapper _mapper;
         public ClientController(IMapper mapper, IClientService clientService)
         {
+            _mapper = mapper;
             _clientService = clientService;
         }
-        [HttpGet]
-        public async Task<IActionResult> GetAasync()
-        {
-            var clients = await _clientService.GetAsync();
-            return Ok(_mapper.Map<List<Onion.ClientContract.Client>>(clients));
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> PostAsync(Onion.ClientContract.Client client)
+        [HttpPost("{id")]
+        public async Task<IActionResult> PostAsync(Orchestrators.Client.Client client)
         {
             var clientModel = _mapper.Map<Core.Client.Client>(client);
             var createdModel = await _clientService.AddAsync(clientModel);
-            return Ok(_mapper.Map<Onion.ClientContract.Client>(createdModel));
+            return Ok(_mapper.Map<Orchestrators.Client.Client>(createdModel));
         }
-
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetByIdAsync(int Id)
+        public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var Buses = await _clientService.GetByIdAsync(Id);
-            return Ok(_mapper.Map<List<Onion.ClientContract.Client>>(Buses));
+            var client = await _clientService.GetByIdAsync(id);
+            return Ok(_mapper.Map<Orchestrators.Client.Client>(client));
         }
-
         [HttpPatch("{id}")]
-        public async Task<IActionResult> Update(int Id, UpdateCount count )
+        public async Task<IActionResult> Update(int id, UpdateCount count )
         {
-            await _clientService.UpdateAsync(Id, Id);
-            return Ok(_mapper.Map<Onion.ClientContract.Client>(Id));
+            await _clientService.UpdateAsync(id, id);
+            return Ok(_mapper.Map<Orchestrators.Client.Client>(id));
         }
-
-        [HttpDelete]
-        public async Task<IActionResult> DeleteAsync(int Id)
+        [HttpDelete("{id")]
+        public async Task<IActionResult> DeleteAsync(int id)
         {
-            await _clientService.Remove(Id);
+            await _clientService.Remove(id);
             return Ok();
         }
     }

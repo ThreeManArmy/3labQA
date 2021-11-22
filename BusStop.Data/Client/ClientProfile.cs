@@ -1,16 +1,17 @@
 using AutoMapper;
 
-namespace BusStop.Onion.ClientContract
+namespace BusStop.Data.Client
 {
-    public class ClientProfile : Profile
+    public class DaoClientProfile : Profile
     {
-        public ClientProfile()
+        public DaoClientProfile()
         {
-            CreateMap<Core.Client.Client, Client>()
+            CreateMap<Core.Client.Client, ClientDto>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
                 .ForMember(dest => dest.SecondName, opt => opt.MapFrom(src => src.SecondName))
-                .ForMember(dest => dest.CountOfTravels, opt => opt.MapFrom(src => src.CountOfTravels));
+                .ForMember(dest => dest.CountOfTravels, opt => opt.MapFrom(src => src.CountOfTravels))
+                .ReverseMap();
         }
 
     }

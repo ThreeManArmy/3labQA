@@ -20,13 +20,13 @@ namespace BusStop.Data.Client
         }
         public async Task<List<Core.Client.Client>> GetAsync()
         {
-            var entities = await _context.clients.ToListAsync();
+            var entities = await _context.Clients.ToListAsync();
             return _mapper.Map<List<Core.Client.Client>>(entities);
         }
 
         public async Task<Core.Client.Client> GetByIdAsync(int id)
         {
-            var entitie = await _context.clients.FirstOrDefaultAsync(x => x.Id == id);
+            var entitie = await _context.Clients.FirstOrDefaultAsync(x => x.Id == id);
             return _mapper.Map <Core.Client.Client> (entitie);
         }
 
@@ -41,8 +41,8 @@ namespace BusStop.Data.Client
 
         public async Task Remove(int id)
         {
-            var entetie = await _context.clients.FirstOrDefaultAsync(x => x.Id == id);
-            _context.clients.Remove(entetie);
+            var entetie = await _context.Clients.FirstOrDefaultAsync(x => x.Id == id);
+            _context.Clients.Remove(entetie);
         }
 
         public async Task<Core.Client.Client> AddAsync(Core.Client.Client client)

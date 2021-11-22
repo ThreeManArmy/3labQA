@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace BusStop.Onion.ClientContract
+namespace BusStop.Orchestrators.Client
 {
     public class Client
     {

@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Core", "BusStop.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Orchestrators", "BusStop.Orchestrators\BusStop.Orchestrators.csproj", "{9644388B-37C7-4F39-ABA3-20696E8D693C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusTests", "BusTests\BusTests.csproj", "{41D343BD-93D7-44F3-BA11-3F6CDFA71506}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{9644388B-37C7-4F39-ABA3-20696E8D693C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9644388B-37C7-4F39-ABA3-20696E8D693C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9644388B-37C7-4F39-ABA3-20696E8D693C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D343BD-93D7-44F3-BA11-3F6CDFA71506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D343BD-93D7-44F3-BA11-3F6CDFA71506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D343BD-93D7-44F3-BA11-3F6CDFA71506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D343BD-93D7-44F3-BA11-3F6CDFA71506}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
